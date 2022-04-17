@@ -1,5 +1,5 @@
 
-Storage of Practicing LeetCode
+Storage of Practicing LeetCode(https://leetcode.com/)
 
 tool: python3
 
