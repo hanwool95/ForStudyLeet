@@ -41,12 +41,14 @@ class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         node_stack = []
 
+        @lru_cache
         def put_node_in_stack(node):
             node_stack.append(node)
             if node.left:
                 put_node_in_stack(node.left)
                 node.left = None
 
+        @lru_cache
         def decoding_node(count):
             cur_node = node_stack.pop()
             if count == k:
@@ -60,7 +62,7 @@ class Solution:
 
         return decoding_node(1)
 
-# Runtime: 52 ms, faster than 89.88% of Python3 online submissions for Kth Smallest Element in a BST.
+# Runtime: 47 ms, faster than 96.14% of Python3 online submissions for Kth Smallest Element in a BST.
 # Memory Usage: 16.7 MB, less than 99.72% of Python3 online submissions for Kth Smallest Element in a BST.
 
-# O(n)으로 줄이면서 런타임 상위 90%, stack 구조로 저장 공간 최적화해서 메모리 상위 99% 달성.
+# O(n)으로 줄이면서 런타임 상위 96%, stack 구조로 저장 공간 최적화해서 메모리 상위 99% 달성.
