@@ -65,3 +65,9 @@ class Solution:
 
 # wrong answer in input
 # [146,71,-13,55,null,231,399,321,null,null,null,null,null,-33]
+
+# pass case
+# [3,null,2,null,1]
+# [1,3,null,null,2]
+# [2,3,1]
+# [3,1,4,null,null,2]
